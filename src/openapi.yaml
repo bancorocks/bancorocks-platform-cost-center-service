@@ -1,0 +1,63 @@
+openapi: 3.0.3
+info:
+  title: Bancorocks Platform - Cost Center Service
+  version: 0.1.0
+  description: API for cost center budget exposure.
+servers:
+  - url: http://localhost:7070
+    description: Local dev
+paths:
+  /api/cost-center/budget/v1/systems/{systemSlug}:
+    get:
+      summary: Get budget by system slug
+      parameters:
+        - name: systemSlug
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Budget data
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BudgetResponse"
+        "404":
+          description: System not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error: { type: string }
+                  system: { type: string }
+components:
+  schemas:
+    BudgetPolicy:
+      type: object
+      properties:
+        blockWhenOver: { type: boolean }
+        thresholdWarnPct: { type: integer, minimum: 0, maximum: 100 }
+      required: [blockWhenOver, thresholdWarnPct]
+    BudgetResponse:
+      type: object
+      properties:
+        system: { type: string }
+        currency: { type: string, enum: [BRL, USD, EUR] }
+        resetAt: { type: string, format: date-time }
+        budgetCents: { type: integer, minimum: 0 }
+        usageCents: { type: integer, minimum: 0 }
+        pendingCents: { type: integer, minimum: 0 }
+        policy:
+          $ref: "#/components/schemas/BudgetPolicy"
+      required:
+        [
+          system,
+          currency,
+          resetAt,
+          budgetCents,
+          usageCents,
+          pendingCents,
+          policy,
+        ]

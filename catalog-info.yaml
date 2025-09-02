@@ -1,0 +1,25 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bancorocks-platform-cost-center-service
+  description: Platform service for cost center management
+  annotations:
+    github.com/project-slug: bancorocks/bancorocks-platform-cost-center-service
+spec:
+  type: service
+  lifecycle: experimental
+  owner: group:default/platform-team
+  providesApis:
+    - bancorocks-platform-cost-center-api
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: bancorocks-platform-cost-center-api
+  description: REST API for cost center budgeting data
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: group:default/platform-team
+  definition:
+    $text: ./src/openapi.yaml
