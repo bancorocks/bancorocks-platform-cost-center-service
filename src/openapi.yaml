@@ -7,7 +7,7 @@ servers:
   - url: http://localhost:7070
     description: Local dev
 paths:
-  /api/cost-center/budget/v1/systems/{systemSlug}:
+  /v1/cost-center/systems/{systemSlug}:
     get:
       summary: Get budget by system slug
       parameters:

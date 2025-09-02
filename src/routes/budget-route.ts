@@ -4,7 +4,7 @@ import { getBudgetBySystem } from "@/models/budget-model";
 const router = Router();
 
 router.get(
-  "/api/cost-center/budget/v1/systems/:systemSlug",
+  "/v1/cost-center/systems/:systemSlug",
   (req: Request, res: Response) => {
     const { systemSlug } = req.params;
     if (!systemSlug) {

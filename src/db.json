@@ -1,6 +1,6 @@
 {
   "systems": {
-    "payments": {
+    "banking-accounts-system": {
       "currency": "BRL",
       "resetAt": "2025-10-01T00:00:00-03:00",
       "budgetCents": 1000000,
@@ -8,7 +8,7 @@
       "pendingCents": 80000,
       "policy": { "blockWhenOver": true, "thresholdWarnPct": 80 }
     },
-    "accounts": {
+    "marketing-institutional-system": {
       "currency": "BRL",
       "resetAt": "2025-10-01T00:00:00-03:00",
       "budgetCents": 600000,
