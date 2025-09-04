@@ -4,17 +4,21 @@
       "currency": "BRL",
       "resetAt": "2025-10-01T00:00:00-03:00",
       "budgetCents": 1000000,
-      "usageCents": 500000,
-      "pendingCents": 80000,
-      "policy": { "blockWhenOver": true, "thresholdWarnPct": 80 }
+      "usageCents": 500000
+      "policy": { 
+        "blockWhenOver": true, 
+        "thresholdWarnPct": 80 
+      }
     },
     "marketing-institutional-system": {
       "currency": "BRL",
       "resetAt": "2025-10-01T00:00:00-03:00",
       "budgetCents": 600000,
-      "usageCents": 420000,
-      "pendingCents": 50000,
-      "policy": { "blockWhenOver": false, "thresholdWarnPct": 85 }
+      "usageCents": 420000
+      "policy": { 
+        "blockWhenOver": false, 
+        "thresholdWarnPct": 85 
+      }
     }
   }
 }
